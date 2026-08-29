@@ -1,5 +1,7 @@
 # book-finder
 
+Note: The API key in the code is not valid.
+
 # Overview:
 
 Book Finder is a command-line tool that helps students find the best deals on textbooks. The program searches multiple online stores using an ISBN and displays the prices, all converted to the user's preferred currency.
