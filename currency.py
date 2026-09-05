@@ -4,7 +4,7 @@ import requests
 
 import os
 
-API_KEY = os.getenv("CURRENCY_API_KEY")
+API_KEY = os.getenv("OPEN_EXCHANGE_RATES_API_KEY")
 
 
 url = f"https://openexchangerates.org/api/latest.json?app_id={API_KEY}"
