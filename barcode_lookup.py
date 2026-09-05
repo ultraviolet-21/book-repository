@@ -3,7 +3,10 @@
 import requests
 from currency import *
 
-API_KEY = '5odpxmgoowyil3qzwqteu45sqfoike'
+import os
+
+API_KEY = os.getenv("BARCODE_LOOKUP_API_KEY")
+
 
 def lookup(barcode: int) ->str:
     '''Uses Barcode Lookup API to find books matching the ISBN number online'''
@@ -15,6 +18,7 @@ def lookup(barcode: int) ->str:
     if response.status_code == 200:
         data = response.json()
     else:
+        data = None
         print("Error:", response.status_code)
 
     if not data:

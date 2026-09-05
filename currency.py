@@ -2,7 +2,11 @@
 
 import requests
 
-API_KEY = "a2874301fff94256b170f50eb0bf228a"
+import os
+
+API_KEY = os.getenv("CURRENCY_API_KEY")
+
+
 url = f"https://openexchangerates.org/api/latest.json?app_id={API_KEY}"
 
 
