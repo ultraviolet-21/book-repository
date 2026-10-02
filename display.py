@@ -2,6 +2,7 @@
 
 from barcode_lookup import *
 import webbrowser
+from title import *
 
 def sort_by_price(stores: list[dict], to_currency: str) -> list[dict]:
     '''Converts prices to the desired currency, then sorts low to high'''
@@ -43,7 +44,14 @@ if __name__ == "__main__":
     to_currency = input("Enter a base currency: ")
     cart = []
     for i in range(number):
-        barcode = input("Enter an ISBN number: ")
+        answer = input("Do you know the ISBN number? y/n ")
+        if answer == 'y':
+            barcode = input("Enter an ISBN number: ")
+        else:
+            title = input("Enter the title: ")
+            author = input("Enter the name of one author: ")
+            books = lookup_by_title(title, author)
+            barcode = select_book(books)
         stores = lookup(barcode)
         sorted_stores = sort_by_price(stores, to_currency)
         display(sorted_stores, to_currency)
