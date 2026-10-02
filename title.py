@@ -1,6 +1,6 @@
 #lookup by title
-
-API_KEY = '74637_da0aa4db0dd4146aaccf8160ecec190d'
+import os
+API_KEY = os.getenv("ISBNDB_API_KEY")
     
 
 import requests
